@@ -59,7 +59,10 @@ ElevatedButtonThemeData elevatedButtonThemeData() => ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         primary: kPrimaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        textStyle: kPrimaryTextStyle.copyWith(fontSize: 16),
+        textStyle: kPrimaryTextStyle.copyWith(
+          fontSize: 16,
+          fontWeight: kMediumWeight,
+        ),
       ),
     );
 
@@ -70,6 +73,9 @@ OutlinedButtonThemeData outlinedButtonThemeData() => OutlinedButtonThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
-        textStyle: kPrimaryTextStyle.copyWith(fontSize: 16),
+        textStyle: kPrimaryTextStyle.copyWith(
+          fontSize: 16,
+          fontWeight: kMediumWeight,
+        ),
       ),
     );

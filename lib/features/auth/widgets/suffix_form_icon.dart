@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ishoes/config/themes/size_config.dart';
 
+import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 
 class SuffixFormIcon extends StatelessWidget {

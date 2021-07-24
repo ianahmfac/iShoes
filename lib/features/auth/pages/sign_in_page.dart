@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ishoes/config/themes/size_config.dart';
+import 'package:ishoes/config/routes/app_router.gr.dart';
 
+import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_outlined_button.dart';
@@ -22,11 +24,15 @@ class _SignInPageState extends State<SignInPage> {
     SizeConfig().init(context);
   }
 
+  void _goToSignUpPage() {
+    AutoRouter.of(context).push(SignUpPageRoute());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign In'),
+        title: const Text('Sign In'),
       ),
       body: SingleChildScrollView(child: _contentBody()),
     );
@@ -66,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
           SizedBox(height: getProportionateScreenHeight(16)),
           CustomOutlinedButton(
             text: 'Sign Up',
-            onPressed: () {},
+            onPressed: _goToSignUpPage,
           ),
         ],
       ),
