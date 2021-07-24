@@ -5,6 +5,7 @@ import '../../core/constants/theme_constant.dart';
 
 ThemeData theme() {
   return ThemeData(
+    primarySwatch: Colors.deepPurple,
     scaffoldBackgroundColor: kBgColor1,
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),

@@ -32,11 +32,9 @@ class _SignUpPageState extends State<SignUpPage> {
       key: _formKey,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.fromLTRB(
-          getProportionateScreenWidth(kDefaultMargin),
-          getProportionateScreenHeight(kDefaultMargin),
-          getProportionateScreenWidth(kDefaultMargin),
-          0,
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(kDefaultMargin),
+          vertical: getProportionateScreenHeight(kDefaultMargin),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
