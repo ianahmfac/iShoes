@@ -18,6 +18,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -39,42 +41,45 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Widget _contentBody() {
-    return Container(
-      padding: EdgeInsets.fromLTRB(
-        getProportionateScreenWidth(kDefaultMargin),
-        getProportionateScreenHeight(50),
-        getProportionateScreenWidth(kDefaultMargin),
-        0,
-      ),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          HeaderText(
-            title: 'Welcome Back',
-            subtitle:
-                'Sign in with your email and password\nor sign up for new account',
-          ),
-          SizedBox(height: getProportionateScreenHeight(50)),
-          _emailTextField(),
-          SizedBox(height: getProportionateScreenHeight(24)),
-          _passwordTextField(),
-          SizedBox(height: getProportionateScreenHeight(50)),
-          CustomButton(
-            text: 'Continue',
-            onPressed: () {},
-          ),
-          SizedBox(height: getProportionateScreenHeight(16)),
-          Text(
-            '- Don\'t have an account? -',
-            style: kSecondaryTextStyle,
-          ),
-          SizedBox(height: getProportionateScreenHeight(16)),
-          CustomOutlinedButton(
-            text: 'Sign Up',
-            onPressed: _goToSignUpPage,
-          ),
-        ],
+    return Form(
+      key: _formKey,
+      child: Container(
+        padding: EdgeInsets.fromLTRB(
+          getProportionateScreenWidth(kDefaultMargin),
+          getProportionateScreenHeight(50),
+          getProportionateScreenWidth(kDefaultMargin),
+          0,
+        ),
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            HeaderText(
+              title: 'Welcome Back',
+              subtitle:
+                  'Sign in with your email and password\nor sign up for new account',
+            ),
+            SizedBox(height: getProportionateScreenHeight(50)),
+            _emailTextField(),
+            SizedBox(height: getProportionateScreenHeight(24)),
+            _passwordTextField(),
+            SizedBox(height: getProportionateScreenHeight(50)),
+            CustomButton(
+              text: 'Continue',
+              onPressed: () {},
+            ),
+            SizedBox(height: getProportionateScreenHeight(16)),
+            Text(
+              '- Don\'t have an account? -',
+              style: kSecondaryTextStyle,
+            ),
+            SizedBox(height: getProportionateScreenHeight(16)),
+            CustomOutlinedButton(
+              text: 'Sign Up',
+              onPressed: _goToSignUpPage,
+            ),
+          ],
+        ),
       ),
     );
   }

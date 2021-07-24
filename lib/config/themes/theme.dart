@@ -36,6 +36,7 @@ InputDecorationTheme inputDecorationTheme() {
     ),
     focusedBorder: focusBorder,
     enabledBorder: outlineInputBorder,
+    helperStyle: kSecondaryTextStyle,
   );
 }
 

@@ -16,7 +16,7 @@ class SuffixFormIcon extends StatelessWidget {
       padding: EdgeInsets.only(right: getProportionateScreenWidth(24)),
       child: Icon(
         icon,
-        size: 20,
+        size: 16,
         color: kPrimaryTextColor,
       ),
     );
