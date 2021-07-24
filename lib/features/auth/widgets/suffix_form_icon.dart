@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ishoes/config/themes/size_config.dart';
 
 import '../../../core/constants/theme_constant.dart';
 
@@ -12,7 +13,7 @@ class SuffixFormIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 24),
+      padding: EdgeInsets.only(right: getProportionateScreenWidth(24)),
       child: Icon(
         icon,
         size: 20,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ishoes/config/themes/size_config.dart';
 
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_button.dart';
@@ -16,6 +17,12 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    SizeConfig().init(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -27,10 +34,10 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget _contentBody() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(
-        kDefaultMargin,
-        50,
-        kDefaultMargin,
+      padding: EdgeInsets.fromLTRB(
+        getProportionateScreenWidth(kDefaultMargin),
+        getProportionateScreenHeight(50),
+        getProportionateScreenWidth(kDefaultMargin),
         0,
       ),
       width: double.infinity,
@@ -42,21 +49,21 @@ class _SignInPageState extends State<SignInPage> {
             subtitle:
                 'Sign in with your email and password\nor sign up for new account',
           ),
-          const SizedBox(height: 50),
+          SizedBox(height: getProportionateScreenHeight(50)),
           _emailTextField(),
-          const SizedBox(height: 24),
+          SizedBox(height: getProportionateScreenHeight(24)),
           _passwordTextField(),
-          const SizedBox(height: 50),
+          SizedBox(height: getProportionateScreenHeight(50)),
           CustomButton(
             text: 'Continue',
             onPressed: () {},
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: getProportionateScreenHeight(16)),
           Text(
-            '- Dont\'t have an account? -',
+            '- Don\'t have an account? -',
             style: kSecondaryTextStyle,
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: getProportionateScreenHeight(16)),
           CustomOutlinedButton(
             text: 'Sign Up',
             onPressed: () {},

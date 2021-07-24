@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ishoes/config/themes/size_config.dart';
 
 import '../../../core/constants/theme_constant.dart';
 
@@ -22,7 +23,7 @@ class HeaderText extends StatelessWidget {
             fontWeight: kSemiBoldWeight,
           ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: getProportionateScreenHeight(12)),
         Text(
           subtitle,
           style: kSecondaryTextStyle,
