@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ishoes/config/routes/app_router.gr.dart';
+import '../../../config/routes/app_router.gr.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';

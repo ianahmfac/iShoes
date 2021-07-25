@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ishoes/config/themes/size_config.dart';
-import 'package:ishoes/core/constants/theme_constant.dart';
-import 'package:ishoes/features/chat/pages/chat_page.dart';
-import 'package:ishoes/features/home/pages/home_page.dart';
-import 'package:ishoes/features/profile/pages/profile_page.dart';
-import 'package:ishoes/features/wishlist/pages/wishlist_page.dart';
+import '../../config/themes/size_config.dart';
+import '../../core/constants/theme_constant.dart';
+import '../chat/pages/chat_page.dart';
+import '../home/pages/home_page.dart';
+import '../profile/pages/profile_page.dart';
+import '../wishlist/pages/wishlist_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);

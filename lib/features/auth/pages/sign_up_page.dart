@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ishoes/config/routes/app_router.gr.dart';
-import 'package:ishoes/config/themes/size_config.dart';
-import 'package:ishoes/core/constants/theme_constant.dart';
-import 'package:ishoes/core/widgets/custom_button.dart';
-import 'package:ishoes/features/auth/widgets/header_text.dart';
-import 'package:ishoes/features/auth/widgets/suffix_form_icon.dart';
+
+import '../../../config/routes/app_router.gr.dart';
+import '../../../config/themes/size_config.dart';
+import '../../../core/constants/theme_constant.dart';
+import '../../../core/widgets/custom_button.dart';
+import '../widgets/header_text.dart';
+import '../widgets/suffix_form_icon.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
