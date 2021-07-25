@@ -14,7 +14,7 @@ ThemeData theme() {
     outlinedButtonTheme: outlinedButtonThemeData(),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kBgColor4,
-      selectedItemColor: kPrimaryColor,
+      selectedItemColor: kSecondaryColor,
       unselectedItemColor: kSecondaryTextColor,
       type: BottomNavigationBarType.fixed,
     ),
