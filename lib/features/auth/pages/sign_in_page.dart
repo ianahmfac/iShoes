@@ -30,6 +30,10 @@ class _SignInPageState extends State<SignInPage> {
     AutoRouter.of(context).push(SignUpPageRoute());
   }
 
+  void _goToNavigationPage() {
+    AutoRouter.of(context).replace(NavigationPageRoute());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +70,7 @@ class _SignInPageState extends State<SignInPage> {
             SizedBox(height: getProportionateScreenHeight(50)),
             CustomButton(
               text: 'Continue',
-              onPressed: () {},
+              onPressed: _goToNavigationPage,
             ),
             SizedBox(height: getProportionateScreenHeight(16)),
             Text(

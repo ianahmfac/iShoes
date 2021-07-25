@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ishoes/config/routes/app_router.gr.dart';
 import 'package:ishoes/config/themes/size_config.dart';
 import 'package:ishoes/core/constants/theme_constant.dart';
 import 'package:ishoes/core/widgets/custom_button.dart';
@@ -15,6 +17,11 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
+
+  void _goToNavigationPage() {
+    AutoRouter.of(context).replace(NavigationPageRoute());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +99,10 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
             SizedBox(height: getProportionateScreenHeight(30)),
-            CustomButton(text: 'Continue', onPressed: () {}),
+            CustomButton(
+              text: 'Continue',
+              onPressed: _goToNavigationPage,
+            ),
             SizedBox(height: getProportionateScreenHeight(30)),
             Text(
               'By continuing your confirm that you are agree\nwith Our Term and Condition',

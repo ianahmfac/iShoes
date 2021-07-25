@@ -12,9 +12,13 @@ ThemeData theme() {
     inputDecorationTheme: inputDecorationTheme(),
     elevatedButtonTheme: elevatedButtonThemeData(),
     outlinedButtonTheme: outlinedButtonThemeData(),
-    iconTheme: IconThemeData(
-      color: kPrimaryTextColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: kBgColor4,
+      selectedItemColor: kPrimaryColor,
+      unselectedItemColor: kSecondaryTextColor,
+      type: BottomNavigationBarType.fixed,
     ),
+    iconTheme: IconThemeData(color: kPrimaryTextColor),
   );
 }
 
