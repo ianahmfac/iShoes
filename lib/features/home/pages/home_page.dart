@@ -22,20 +22,21 @@ class HomePage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.fromLTRB(
           getProportionateScreenWidth(30),
-          getProportionateScreenHeight(8),
+          10,
           getProportionateScreenWidth(30),
           0,
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: HeaderTextField(),
             ),
-            SizedBox(width: getProportionateScreenWidth(16)),
+            SizedBox(width: getProportionateScreenWidth(8)),
             CustomCircleButton(
               icon: Icon(FontAwesomeIcons.shoppingBag),
-              buttonSize: 20,
               onPressed: () {},
+              qty: 10,
             )
           ],
         ),

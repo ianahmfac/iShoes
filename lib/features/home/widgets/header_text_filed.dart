@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../config/themes/size_config.dart';
+
 import '../../../core/constants/theme_constant.dart';
 
 class HeaderTextField extends StatelessWidget {
@@ -11,7 +11,6 @@ class HeaderTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getProportionateScreenHeight(45),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: kSubtitleColor,
@@ -20,8 +19,7 @@ class HeaderTextField extends StatelessWidget {
         enabled: false,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
-            vertical: getProportionateScreenHeight(12),
-            horizontal: getProportionateScreenWidth(20),
+            vertical: 11,
           ),
           border: InputBorder.none,
           hintText: 'Search Product',
@@ -29,7 +27,7 @@ class HeaderTextField extends StatelessWidget {
           prefixIcon: Icon(
             FontAwesomeIcons.search,
             color: kPrimaryTextColor,
-            size: getProportionateScreenHeight(18),
+            size: 16,
           ),
         ),
       ),
