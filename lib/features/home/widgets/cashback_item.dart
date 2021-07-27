@@ -24,7 +24,6 @@ class CashbackItem extends StatelessWidget {
               width: SizeConfig.screenWidth * 0.85,
               padding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(16),
-                vertical: getProportionateScreenHeight(20),
               ),
               color: kSubtitleColor,
               child: Column(
@@ -35,7 +34,6 @@ class CashbackItem extends StatelessWidget {
                     cashback.title,
                     style: kSecondaryTextStyle.copyWith(fontSize: 12),
                   ),
-                  SizedBox(height: getProportionateScreenHeight(4)),
                   Row(
                     children: [
                       Expanded(
@@ -43,7 +41,7 @@ class CashbackItem extends StatelessWidget {
                           'Cashback ${cashback.amount}%',
                           style: kPrimaryTextStyle.copyWith(
                             fontWeight: kSemiBoldWeight,
-                            fontSize: getProportionateScreenHeight(22),
+                            fontSize: getProportionateScreenWidth(22),
                           ),
                         ),
                       ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../auth/widgets/title_section.dart';
+
+import '../widgets/category_item.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
@@ -23,19 +26,43 @@ class HomePage extends StatelessWidget {
 
   Widget _contentBody() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _cashbackBanner(),
+        TitleSection(title: 'Categories'),
+        _categories(),
+        TitleSection(title: 'Popular Product'),
+        TitleSection(title: 'New Coming'),
       ],
     );
   }
 
-  Widget _cashbackBanner() {
-    return SizedBox(
-      height: SizeConfig.screenHeight * 0.2,
+  Widget _categories() {
+    return Container(
+      height: getProportionateScreenHeight(50),
       child: ListView.builder(
         padding: EdgeInsets.symmetric(
           horizontal: getProportionateScreenWidth(kDefaultMargin),
-          vertical: getProportionateScreenHeight(20),
+        ),
+        scrollDirection: Axis.horizontal,
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return CategoryItem(
+            name: 'All Shoes',
+            onPressed: () {},
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _cashbackBanner() {
+    return Container(
+      margin: EdgeInsets.only(top: getProportionateScreenHeight(20)),
+      height: SizeConfig.screenHeight * 0.15,
+      child: ListView.builder(
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(kDefaultMargin),
         ),
         scrollDirection: Axis.horizontal,
         itemCount: dummyCashback.length,
