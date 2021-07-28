@@ -8,7 +8,7 @@ class CustomCircleButton extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.onPressed,
-    this.buttonSize = 45.0,
+    this.buttonSize = 40.0,
     this.backgroundColor = kSubtitleColor,
     this.qty = 0,
   }) : super(key: key);
@@ -29,7 +29,6 @@ class CustomCircleButton extends StatelessWidget {
               onTap: onPressed,
               child: SizedBox(
                 width: buttonSize,
-                height: buttonSize,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: FittedBox(child: icon),

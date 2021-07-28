@@ -12,6 +12,7 @@ const kBgColor4 = Color(0xFF252836);
 const kPrimaryTextColor = Color(0xFFF1F0F2);
 const kSecondaryTextColor = Color(0xFF999999);
 const kSubtitleColor = Color(0xFF504F5E);
+const kPopularTitleColor = Color(0xFF2E2E2E);
 
 TextStyle kPrimaryTextStyle = GoogleFonts.nunito(color: kPrimaryTextColor);
 TextStyle kSecondaryTextStyle = GoogleFonts.nunito(color: kSecondaryTextColor);

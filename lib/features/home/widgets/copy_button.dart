@@ -21,7 +21,7 @@ class CopyButton extends StatelessWidget {
         onTap: onPressed,
         borderRadius: BorderRadius.circular(5),
         child: Container(
-          height: getProportionateScreenHeight(28),
+          width: getProportionateScreenWidth(120),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             border: Border.all(color: kPrimaryTextColor),

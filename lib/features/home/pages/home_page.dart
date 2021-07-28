@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../core/constants/asset_path.dart';
+import '../widgets/product_card_item.dart';
 import '../../auth/widgets/title_section.dart';
 
 import '../widgets/category_item.dart';
@@ -18,7 +20,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: _homeHeader(),
+        flexibleSpace: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: _homeHeader(),
+        ),
       ),
       body: SingleChildScrollView(child: _contentBody()),
     );
@@ -32,8 +37,25 @@ class HomePage extends StatelessWidget {
         TitleSection(title: 'Categories'),
         _categories(),
         TitleSection(title: 'Popular Product'),
+        _popularProduct(),
         TitleSection(title: 'New Coming'),
       ],
+    );
+  }
+
+  Widget _popularProduct() {
+    return Container(
+      height: getProportionateScreenHeight(300),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(kDefaultMargin),
+        ),
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return ProductCardItem();
+        },
+      ),
     );
   }
 
@@ -76,11 +98,8 @@ class HomePage extends StatelessWidget {
   Widget _homeHeader() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(
-          getProportionateScreenWidth(30),
-          10,
-          getProportionateScreenWidth(30),
-          0,
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(20),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

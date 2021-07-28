@@ -32,30 +32,19 @@ class CashbackItem extends StatelessWidget {
                 children: [
                   Text(
                     cashback.title,
-                    style: kSecondaryTextStyle.copyWith(fontSize: 12),
+                    style: kSecondaryTextStyle.copyWith(
+                      fontSize: getProportionateScreenHeight(14),
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Cashback ${cashback.amount}%',
-                          style: kPrimaryTextStyle.copyWith(
-                            fontWeight: kSemiBoldWeight,
-                            fontSize: getProportionateScreenWidth(22),
-                          ),
-                        ),
-                      ),
-                    ],
+                  SizedBox(height: getProportionateScreenHeight(4)),
+                  Text(
+                    'Cashback ${cashback.amount}%',
+                    style: kPrimaryTextStyle.copyWith(
+                      fontWeight: kSemiBoldWeight,
+                      fontSize: getProportionateScreenHeight(22),
+                    ),
                   ),
                 ],
-              ),
-            ),
-            Positioned(
-              right: getProportionateScreenWidth(20),
-              bottom: getProportionateScreenHeight(12),
-              child: CopyButton(
-                code: cashback.code,
-                onPressed: () {},
               ),
             ),
             Positioned(
@@ -69,7 +58,15 @@ class CashbackItem extends StatelessWidget {
                   color: kSecondaryTextColor.withOpacity(0.1),
                 ),
               ),
-            )
+            ),
+            Positioned(
+              right: getProportionateScreenWidth(16),
+              bottom: getProportionateScreenHeight(12),
+              child: CopyButton(
+                code: cashback.code,
+                onPressed: () {},
+              ),
+            ),
           ],
         ),
       ),
