@@ -25,6 +25,7 @@ class ProductTileItem extends StatelessWidget {
                 AssetPath.shoesExample,
                 fit: BoxFit.cover,
                 width: getProportionateScreenWidth(120),
+                height: getProportionateScreenWidth(120),
               ),
             ),
             Expanded(
