@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../core/constants/asset_path.dart';
-import '../widgets/product_card_item.dart';
-import '../../auth/widgets/title_section.dart';
-
-import '../widgets/category_item.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_circle_button.dart';
+import '../../../core/widgets/title_section.dart';
 import '../models/cashback.dart';
 import '../widgets/cashback_item.dart';
+import '../widgets/category_item.dart';
 import '../widgets/header_text_filed.dart';
+import '../widgets/product_card_item.dart';
+import '../widgets/product_tile_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,8 +37,30 @@ class HomePage extends StatelessWidget {
         _categories(),
         TitleSection(title: 'Popular Product'),
         _popularProduct(),
-        TitleSection(title: 'New Coming'),
+        TitleSection(
+          title: 'New Coming',
+          hasButtonSeeMore: true,
+          onPressed: () {},
+        ),
+        _newComing(),
+        SizedBox(height: getProportionateScreenHeight(kDefaultMargin)),
       ],
+    );
+  }
+
+  Widget _newComing() {
+    return Container(
+      margin: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(kDefaultMargin),
+      ),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 3,
+        itemBuilder: (BuildContext context, int index) {
+          return ProductTileItem();
+        },
+      ),
     );
   }
 
