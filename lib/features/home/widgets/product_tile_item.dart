@@ -12,8 +12,8 @@ class ProductTileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: getProportionateScreenHeight(16)),
-      height: getProportionateScreenHeight(120),
+      margin: EdgeInsets.only(bottom: getProportionateScreenHeight(12)),
+      height: getProportionateScreenWidth(120),
       child: TapSlashItem(
         onPressed: () {},
         itemRadius: 16,
@@ -39,14 +39,14 @@ class ProductTileItem extends StatelessWidget {
                     Text(
                       'Running',
                       style: kSecondaryTextStyle.copyWith(
-                        fontSize: getProportionateScreenHeight(12),
+                        fontSize: getProportionateScreenWidth(12),
                       ),
                     ),
                     SizedBox(height: getProportionateScreenHeight(8)),
                     Text(
                       'Adidas Running 2.0',
                       style: kPrimaryTextStyle.copyWith(
-                        fontSize: getProportionateScreenHeight(16),
+                        fontSize: getProportionateScreenWidth(16),
                         fontWeight: kSemiBoldWeight,
                       ),
                       maxLines: 2,
@@ -56,7 +56,7 @@ class ProductTileItem extends StatelessWidget {
                     Text(
                       '\$25.05',
                       style: kPriceTextStyle.copyWith(
-                        fontSize: getProportionateScreenHeight(14),
+                        fontSize: getProportionateScreenWidth(14),
                         fontWeight: kSemiBoldWeight,
                       ),
                     ),
