@@ -20,7 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   void _goToNavigationPage() {
-    AutoRouter.of(context).replace(NavigationPageRoute());
+    AutoRouter.of(context).replaceAll([NavigationPageRoute()]);
   }
 
   @override
@@ -53,52 +53,13 @@ class _SignUpPageState extends State<SignUpPage> {
                   'Complete your account details\nto be registed in the app',
             ),
             SizedBox(height: getProportionateScreenHeight(50)),
-            TextFormField(
-              textCapitalization: TextCapitalization.words,
-              textInputAction: TextInputAction.next,
-              style: kPrimaryTextStyle,
-              decoration: InputDecoration(
-                labelText: 'Full Name',
-                hintText: 'ex: John Doe',
-                suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.userAlt),
-              ),
-            ),
+            _fullNameForm(),
             SizedBox(height: getProportionateScreenHeight(24)),
-            TextFormField(
-              textInputAction: TextInputAction.next,
-              style: kPrimaryTextStyle,
-              decoration: InputDecoration(
-                labelText: 'Username',
-                hintText: 'ex: john_doe',
-                suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.idCardAlt),
-              ),
-            ),
+            _usernameForm(),
             SizedBox(height: getProportionateScreenHeight(24)),
-            TextFormField(
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.emailAddress,
-              style: kPrimaryTextStyle,
-              decoration: InputDecoration(
-                labelText: 'Email',
-                hintText: 'ex: john_doe@gmail.com',
-                suffixIcon:
-                    SuffixFormIcon(icon: FontAwesomeIcons.solidEnvelope),
-              ),
-            ),
+            _emailForm(),
             SizedBox(height: getProportionateScreenHeight(24)),
-            TextFormField(
-              textInputAction: TextInputAction.done,
-              style: kPrimaryTextStyle,
-              obscureText: true,
-              enableSuggestions: false,
-              autocorrect: false,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                hintText: 'ex: MyPassworDD123@@',
-                suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.lock),
-                helperText: '* Password must contain at least 6 characters',
-              ),
-            ),
+            _passwordForm(),
             SizedBox(height: getProportionateScreenHeight(30)),
             CustomButton(
               text: 'Continue',
@@ -112,6 +73,60 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  TextFormField _passwordForm() {
+    return TextFormField(
+      textInputAction: TextInputAction.done,
+      style: kPrimaryTextStyle,
+      obscureText: true,
+      enableSuggestions: false,
+      autocorrect: false,
+      decoration: InputDecoration(
+        labelText: 'Password',
+        hintText: 'ex: MyPassworDD123@@',
+        suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.lock),
+        helperText: '* Password must contain at least 6 characters',
+      ),
+    );
+  }
+
+  TextFormField _emailForm() {
+    return TextFormField(
+      textInputAction: TextInputAction.next,
+      keyboardType: TextInputType.emailAddress,
+      style: kPrimaryTextStyle,
+      decoration: InputDecoration(
+        labelText: 'Email',
+        hintText: 'ex: john_doe@gmail.com',
+        suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.solidEnvelope),
+      ),
+    );
+  }
+
+  TextFormField _usernameForm() {
+    return TextFormField(
+      textInputAction: TextInputAction.next,
+      style: kPrimaryTextStyle,
+      decoration: InputDecoration(
+        labelText: 'Username',
+        hintText: 'ex: john_doe',
+        suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.idCardAlt),
+      ),
+    );
+  }
+
+  TextFormField _fullNameForm() {
+    return TextFormField(
+      textCapitalization: TextCapitalization.words,
+      textInputAction: TextInputAction.next,
+      style: kPrimaryTextStyle,
+      decoration: InputDecoration(
+        labelText: 'Full Name',
+        hintText: 'ex: John Doe',
+        suffixIcon: SuffixFormIcon(icon: FontAwesomeIcons.userAlt),
       ),
     );
   }

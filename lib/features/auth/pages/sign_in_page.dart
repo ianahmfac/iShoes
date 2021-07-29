@@ -52,7 +52,7 @@ class _SignInPageState extends State<SignInPage> {
           getProportionateScreenWidth(kDefaultMargin),
           getProportionateScreenHeight(50),
           getProportionateScreenWidth(kDefaultMargin),
-          0,
+          getProportionateScreenHeight(kDefaultMargin),
         ),
         width: double.infinity,
         child: Column(
