@@ -42,7 +42,7 @@ class ChatInput extends StatelessWidget {
               ),
               SizedBox(width: getProportionateScreenWidth(12)),
               CustomCircleButton(
-                icon: Icon(FontAwesomeIcons.paperPlane),
+                icon: Icon(FontAwesomeIcons.solidPaperPlane),
                 onPressed: () {},
                 buttonSize: 45,
                 backgroundColor: kPrimaryColor,

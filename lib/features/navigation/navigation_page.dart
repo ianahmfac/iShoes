@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../../config/routes/app_router.gr.dart';
 import '../../config/themes/size_config.dart';
 import '../../core/constants/theme_constant.dart';
-import '../chat/pages/chat_page.dart';
 import '../home/pages/home_page.dart';
 import '../profile/pages/profile_page.dart';
 import '../wishlist/pages/wishlist_page.dart';
@@ -56,8 +56,6 @@ class _NavigationPageState extends State<NavigationPage> {
         return HomePage();
       case 1:
         return WishlistPage();
-      case 2:
-        return ChatPage();
       case 3:
         return ProfilePage();
       default:
