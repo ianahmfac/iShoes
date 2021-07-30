@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../config/routes/app_router.gr.dart';
 import '../../config/themes/size_config.dart';
 import '../../core/constants/theme_constant.dart';
 import '../chat/pages/chat_page.dart';
@@ -29,6 +31,10 @@ class _NavigationPageState extends State<NavigationPage> {
           currentIndex: _currentIndex,
           iconSize: getProportionateScreenWidth(22),
           onTap: (value) {
+            if (value == 2) {
+              AutoRouter.of(context).push(ChatPageRoute());
+              return;
+            }
             setState(() {
               _currentIndex = value;
             });

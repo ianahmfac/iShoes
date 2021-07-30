@@ -12,7 +12,7 @@ class ProductTileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: getProportionateScreenHeight(12)),
+      margin: EdgeInsets.only(bottom: getProportionateScreenHeight(20)),
       height: getProportionateScreenWidth(120),
       child: TapSlashItem(
         onPressed: () {},
