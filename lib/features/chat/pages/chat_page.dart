@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/chat_input.dart';
+
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../widgets/header_chat.dart';
@@ -14,11 +16,18 @@ class ChatPage extends StatelessWidget {
         child: HeaderChat(),
         preferredSize: Size.fromHeight(getProportionateScreenHeight(90)),
       ),
-      body: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return Container();
-        },
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (BuildContext context, int index) {
+                return Container();
+              },
+            ),
+          ),
+          ChatInput(),
+        ],
       ),
     );
   }
