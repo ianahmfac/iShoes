@@ -14,14 +14,19 @@ class ProductSelectedChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getProportionateScreenHeight(70),
+      height: getProportionateScreenHeight(90),
+      margin: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(30),
+        vertical: getProportionateScreenHeight(12),
+      ),
       padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(kDefaultMargin),
+        horizontal: getProportionateScreenWidth(8),
         vertical: getProportionateScreenHeight(4),
       ),
       decoration: BoxDecoration(
         border: Border.all(color: kPrimaryColor),
         color: kPrimaryColor.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         children: [
@@ -29,8 +34,8 @@ class ProductSelectedChat extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               AssetPath.shoesExample,
-              width: getProportionateScreenHeight(70),
-              height: getProportionateScreenHeight(70),
+              width: getProportionateScreenHeight(90),
+              height: getProportionateScreenHeight(90),
               fit: BoxFit.cover,
             ),
           ),
@@ -43,7 +48,7 @@ class ProductSelectedChat extends StatelessWidget {
                 Text(
                   'Adidas Running 2.0',
                   style: kPrimaryTextStyle.copyWith(
-                    fontSize: getProportionateScreenHeight(16),
+                    fontSize: getProportionateScreenWidth(16),
                     fontWeight: kSemiBoldWeight,
                   ),
                   maxLines: 1,
@@ -53,6 +58,7 @@ class ProductSelectedChat extends StatelessWidget {
                 Text(
                   '\$25.05',
                   style: kPriceTextStyle.copyWith(
+                    fontSize: getProportionateScreenWidth(14),
                     fontWeight: kSemiBoldWeight,
                   ),
                 ),

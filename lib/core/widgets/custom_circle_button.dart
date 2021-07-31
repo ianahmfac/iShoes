@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../config/themes/size_config.dart';
 import '../constants/theme_constant.dart';
 import 'circle_item_count.dart';
 
@@ -8,7 +9,7 @@ class CustomCircleButton extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.onPressed,
-    this.buttonSize = 40.0,
+    this.buttonSize,
     this.backgroundColor = kSubtitleColor,
     this.qty = 0,
   }) : super(key: key);
@@ -28,11 +29,11 @@ class CustomCircleButton extends StatelessWidget {
             child: InkWell(
               onTap: onPressed,
               child: Container(
-                width: buttonSize,
-                height: buttonSize,
+                width: getProportionateScreenWidth(buttonSize ?? 40),
+                height: getProportionateScreenWidth(buttonSize ?? 40),
                 child: Icon(
                   icon,
-                  size: (buttonSize ?? 40) * 0.5,
+                  size: getProportionateScreenWidth((buttonSize ?? 40) * 0.5),
                 ),
               ),
             ),
