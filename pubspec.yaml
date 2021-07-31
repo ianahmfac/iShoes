@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   auto_route: ^2.2.0
+  bubble: ^1.2.1
   cupertino_icons: ^1.0.2
   flutter_mobx: ^2.0.0
   font_awesome_flutter: ^9.1.0
