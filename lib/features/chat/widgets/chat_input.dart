@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_circle_button.dart';
@@ -42,9 +43,9 @@ class ChatInput extends StatelessWidget {
               ),
               SizedBox(width: getProportionateScreenWidth(12)),
               CustomCircleButton(
-                icon: Icon(FontAwesomeIcons.solidPaperPlane),
+                icon: FontAwesomeIcons.solidPaperPlane,
                 onPressed: () {},
-                buttonSize: 45,
+                buttonSize: 40,
                 backgroundColor: kPrimaryColor,
               )
             ],

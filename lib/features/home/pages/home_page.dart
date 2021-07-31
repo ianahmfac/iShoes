@@ -130,7 +130,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(width: getProportionateScreenWidth(8)),
             CustomCircleButton(
-              icon: Icon(FontAwesomeIcons.shoppingBag),
+              icon: FontAwesomeIcons.shoppingBag,
               onPressed: () {},
               qty: 10,
             )

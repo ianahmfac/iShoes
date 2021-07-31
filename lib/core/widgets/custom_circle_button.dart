@@ -12,7 +12,7 @@ class CustomCircleButton extends StatelessWidget {
     this.backgroundColor = kSubtitleColor,
     this.qty = 0,
   }) : super(key: key);
-  final Widget icon;
+  final IconData icon;
   final VoidCallback onPressed;
   final double? buttonSize;
   final Color? backgroundColor;
@@ -27,11 +27,12 @@ class CustomCircleButton extends StatelessWidget {
             color: backgroundColor,
             child: InkWell(
               onTap: onPressed,
-              child: SizedBox(
+              child: Container(
                 width: buttonSize,
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: FittedBox(child: icon),
+                height: buttonSize,
+                child: Icon(
+                  icon,
+                  size: (buttonSize ?? 40) * 0.5,
                 ),
               ),
             ),

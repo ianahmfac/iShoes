@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../widgets/chat_bubble.dart';
-import '../widgets/empty_chat.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
+import '../widgets/chat_bubble.dart';
 import '../widgets/chat_input.dart';
+import '../widgets/empty_chat.dart';
 import '../widgets/header_chat.dart';
+import '../widgets/product_selected_chat.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -13,17 +14,19 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kBgColor3,
-        appBar: PreferredSize(
-          child: HeaderChat(),
-          preferredSize: Size.fromHeight(getProportionateScreenHeight(90)),
-        ),
-        body: _contentBody());
+      backgroundColor: kBgColor3,
+      appBar: PreferredSize(
+        child: HeaderChat(),
+        preferredSize: Size.fromHeight(getProportionateScreenHeight(90)),
+      ),
+      body: _contentBody(),
+    );
   }
 
   Widget _contentBody() {
     return Column(
       children: [
+        ProductSelectedChat(),
         _listChat(),
         ChatInput(),
       ],
