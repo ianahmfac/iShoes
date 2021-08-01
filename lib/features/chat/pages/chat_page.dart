@@ -26,7 +26,10 @@ class ChatPage extends StatelessWidget {
   Widget _contentBody() {
     return Column(
       children: [
-        ProductSelectedChat(),
+        Visibility(
+          visible: true,
+          child: ProductSelectedChat(),
+        ),
         _listChat(),
         ChatInput(),
       ],
