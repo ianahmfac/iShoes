@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ishoes/core/widgets/tap_splash_item.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/asset_path.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_outlined_button.dart';
+import '../../../core/widgets/tap_splash_item.dart';
 
 class ProductInChat extends StatelessWidget {
   const ProductInChat({

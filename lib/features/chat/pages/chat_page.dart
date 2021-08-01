@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../config/themes/size_config.dart';
+import '../../../core/constants/asset_path.dart';
 import '../../../core/constants/theme_constant.dart';
+import '../../../core/widgets/empty_state.dart';
 import '../widgets/chat_bubble.dart';
 import '../widgets/chat_input.dart';
-import '../widgets/empty_chat.dart';
 import '../widgets/header_chat.dart';
 import '../widgets/product_selected_chat.dart';
 
@@ -40,7 +41,10 @@ class ChatPage extends StatelessWidget {
     final list = [true, false, true, false, true, false, true, false];
     return Expanded(
       child: list.isEmpty
-          ? EmptyChat()
+          ? EmptyState(
+              assetIcon: AssetPath.headphoneIcon,
+              title: 'Start Chatting',
+            )
           : ListView.builder(
               padding: EdgeInsets.symmetric(
                 vertical: getProportionateScreenHeight(16),
