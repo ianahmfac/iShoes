@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../config/routes/app_router.gr.dart';
 
+import '../../../config/routes/app_router.gr.dart';
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_button.dart';
@@ -71,6 +71,7 @@ class _SignInPageState extends State<SignInPage> {
             CustomButton(
               text: 'Continue',
               onPressed: _goToNavigationPage,
+              textSize: 18,
             ),
             SizedBox(height: getProportionateScreenHeight(16)),
             Text(
@@ -81,6 +82,7 @@ class _SignInPageState extends State<SignInPage> {
             CustomOutlinedButton(
               text: 'Sign Up',
               onPressed: _goToSignUpPage,
+              textSize: 18,
             ),
           ],
         ),

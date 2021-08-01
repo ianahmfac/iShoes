@@ -64,6 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
             CustomButton(
               text: 'Continue',
               onPressed: _goToNavigationPage,
+              textSize: 18,
             ),
             SizedBox(height: getProportionateScreenHeight(30)),
             Text(
