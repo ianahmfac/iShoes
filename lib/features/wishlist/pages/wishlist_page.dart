@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../config/themes/size_config.dart';
 import '../../../core/constants/asset_path.dart';
-import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/empty_state.dart';
 import '../widgets/wishlist_item.dart';
 
@@ -32,7 +31,7 @@ class WishlistPage extends StatelessWidget {
           )
         : GridView.builder(
             padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(kDefaultMargin),
+              horizontal: getProportionateScreenWidth(16),
               vertical: getProportionateScreenHeight(12),
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

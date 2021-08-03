@@ -7,4 +7,5 @@ class AssetPath {
   static const headphoneIcon = "$_baseImagePath/headphone_icon.png";
   static const loveIcon = "$_baseImagePath/love_icon.png";
   static const shoesExample = "$_baseImagePath/shoes_example.png";
+  static const profileDefault = "$_baseImagePath/profile_default.png";
 }
