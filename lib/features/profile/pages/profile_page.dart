@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../config/routes/app_router.gr.dart';
+import '../../../core/widgets/custom_dialog.dart';
 import '../../../core/widgets/title_section.dart';
 import '../widgets/menu_tile.dart';
 import '../widgets/profile_header.dart';
@@ -12,6 +13,20 @@ class ProfilePage extends StatelessWidget {
 
   void _goToEditProfile(BuildContext context) {
     AutoRouter.of(context).push(EditProfilePageRoute());
+  }
+
+  void _signOut(BuildContext context) async {
+    final isConfirmed = await CustomDialog(
+      title: 'Sign Out?',
+      subtitle: 'Do you want to sign out from this account?',
+      confirmationText: 'Sign Out',
+      cancelText: 'Cancel',
+      icon: FontAwesomeIcons.signOutAlt,
+    ).show(context);
+
+    if (isConfirmed!) {
+      AutoRouter.of(context).replaceAll([SignInPageRoute()]);
+    }
   }
 
   @override
@@ -64,7 +79,7 @@ class ProfilePage extends StatelessWidget {
         MenuTile(
           title: 'Sign Out',
           icon: FontAwesomeIcons.signOutAlt,
-          onPressed: () {},
+          onPressed: () => _signOut(context),
         ),
       ],
     );
