@@ -7,8 +7,8 @@ import '../../../config/themes/size_config.dart';
 import '../../../core/constants/theme_constant.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_outlined_button.dart';
+import '../../../core/widgets/suffix_form_icon.dart';
 import '../widgets/header_text.dart';
-import '../widgets/suffix_form_icon.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);

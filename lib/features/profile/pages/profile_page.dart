@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../config/routes/app_router.gr.dart';
 import '../../../core/widgets/title_section.dart';
 import '../widgets/menu_tile.dart';
 import '../widgets/profile_header.dart';
@@ -8,17 +10,21 @@ import '../widgets/profile_header.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
+  void _goToEditProfile(BuildContext context) {
+    AutoRouter.of(context).push(EditProfilePageRoute());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Your Profile'),
       ),
-      body: SingleChildScrollView(child: _contentBody()),
+      body: SingleChildScrollView(child: _contentBody(context)),
     );
   }
 
-  Widget _contentBody() {
+  Widget _contentBody(BuildContext context) {
     return Column(
       children: [
         ProfileHeader(),
@@ -26,7 +32,7 @@ class ProfilePage extends StatelessWidget {
         MenuTile(
           icon: FontAwesomeIcons.userEdit,
           title: 'Edit Profile',
-          onPressed: () {},
+          onPressed: () => _goToEditProfile(context),
         ),
         MenuTile(
           icon: FontAwesomeIcons.history,

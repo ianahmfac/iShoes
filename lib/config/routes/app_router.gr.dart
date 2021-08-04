@@ -10,6 +10,7 @@ import 'package:ishoes/features/auth/pages/sign_in_page.dart' as _i3;
 import 'package:ishoes/features/auth/pages/sign_up_page.dart' as _i4;
 import 'package:ishoes/features/chat/pages/chat_page.dart' as _i6;
 import 'package:ishoes/features/navigation/navigation_page.dart' as _i5;
+import 'package:ishoes/features/profile/pages/edit_profile_page.dart' as _i7;
 
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -36,7 +37,13 @@ class AppRouter extends _i1.RootStackRouter {
         routeData: routeData,
         builder: (_) {
           return const _i6.ChatPage();
-        })
+        }),
+    EditProfilePageRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i7.EditProfilePage();
+        },
+        fullscreenDialog: true)
   };
 
   @override
@@ -44,7 +51,8 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(SignInPageRoute.name, path: '/'),
         _i1.RouteConfig(SignUpPageRoute.name, path: '/sign-up-page'),
         _i1.RouteConfig(NavigationPageRoute.name, path: '/navigation-page'),
-        _i1.RouteConfig(ChatPageRoute.name, path: '/chat-page')
+        _i1.RouteConfig(ChatPageRoute.name, path: '/chat-page'),
+        _i1.RouteConfig(EditProfilePageRoute.name, path: '/edit-profile-page')
       ];
 }
 
@@ -70,4 +78,10 @@ class ChatPageRoute extends _i1.PageRouteInfo {
   const ChatPageRoute() : super(name, path: '/chat-page');
 
   static const String name = 'ChatPageRoute';
+}
+
+class EditProfilePageRoute extends _i1.PageRouteInfo {
+  const EditProfilePageRoute() : super(name, path: '/edit-profile-page');
+
+  static const String name = 'EditProfilePageRoute';
 }
